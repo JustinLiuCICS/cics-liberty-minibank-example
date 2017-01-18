@@ -67,7 +67,9 @@ This project is licensed under [Apache License Version 2.0](LICENSE).
 * CICS TS V5.3 or later
 * Java SE 1.7 or later on the z/OS system
 * Java SE 1.7 or later on the workstation
-* Eclipse with WebSphere Developer Tools(WDT) and CICS Explorer SDK installed， two ways to install WDT and CICS Explorer SDK as follows.
+* Eclipse with WebSphere Developer Tools(WDT) and CICS Explorer SDK installed. 
+
+Two ways to install WDT and CICS Explorer SDK as follows.
 
 1. Download CICS Explorer (https://developer.ibm.com/mainframe/products/downloads/eclipse-tools/),
 
