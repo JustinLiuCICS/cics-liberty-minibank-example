@@ -68,6 +68,7 @@ This project is licensed under [Apache License Version 2.0](LICENSE).
 * Java SE 1.7 or later on the z/OS system
 * Java SE 1.7 or later on the workstation
 * Eclipse with WebSphere Developer Tools(WDT) and CICS Explorer SDK installed， two ways to install WDT and CICS Explorer SDK as follows.
+
 1. Download CICS Explorer (https://developer.ibm.com/mainframe/products/downloads/eclipse-tools/),
 
    Open CICS Explorer -> Help -> Install New Software, and Add repository site(http://public.dhe.ibm.com/ibmdl/export/pub/software/htp/zos/tools/aqua/),
