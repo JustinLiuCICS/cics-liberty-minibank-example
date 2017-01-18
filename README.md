@@ -69,11 +69,17 @@ This project is licensed under [Apache License Version 2.0](LICENSE).
 * Java SE 1.7 or later on the workstation
 * Eclipse with WebSphere Developer Tools(WDT) and CICS Explorer SDK installed， two ways to install WDT and CICS Explorer SDK as follows.
 1. Download CICS Explorer (https://developer.ibm.com/mainframe/products/downloads/eclipse-tools/),
+
    Open CICS Explorer -> Help -> Install New Software, and Add repository site(http://public.dhe.ibm.com/ibmdl/export/pub/software/htp/zos/tools/aqua/),
+   
    Expand 'IBM CICS Explorer' and select 'IBM CICS SDK for Servlet and JSP support' to install WDT within CICS Explorer SDK.
+   
    You can get all above steps by this link(http://www-01.ibm.com/support/docview.wss?uid=swg24033579#Liberty).
+   
 2. Download Eclipse IDE for Java EE Developers(Luna) by this link(http://www.eclipse.org/downloads/packages/release/Luna/SR2) ,
+
    Install WDT in Eclipse by this link(https://developer.ibm.com/wasdev/getstarted/),
+   
    Install CICS Explorer SDK by open Help -> Install New Software, and Add repository site(http://public.dhe.ibm.com/ibmdl/export/pub/software/htp/zos/tools/aqua/), select 'IBM CICS Explorer' and install it. 
    
    ***Notes***
@@ -100,21 +106,28 @@ This project is licensed under [Apache License Version 2.0](LICENSE).
 1. Download [Liberty](https://developer.ibm.com/wasdev/getstarted/) if you haven't installed it in your laptop. 
 
 2. Download [Derby](https://db.apache.org/derby/derby_downloads.html) if you haven't installed yet, after that create a derby database in your laptop. We have already provided the DDL for the database needed, you can make your database using this DDL quite easily.Then put [*Minibank_DDL_Derby.sql*](DB-Tables/Minibank_DDL_Derby.sql) file under your Derby's 'bin' folder. According to [Derby Reference](https://builds.apache.org/job/Derby-docs/lastSuccessfulBuild/artifact/trunk/out/getstart/index.html) to create your own Derby database named ***minibank*** with the command as follows:
+   
    Set JAVA_HOME by the command
-     export JAVA_HOME=~/jdk1.8.0_112.jdk
+   
+     ***export JAVA_HOME=~/jdk1.8.0_112.jdk***
+	 
    Set DERBY_HOME by the command
-     export DERBY_HOME=~/db-derby-10.13.1.1-bin 
+   
+     ***export DERBY_HOME=~/db-derby-10.13.1.1-bin***
+	 
    Set DERBY_HOME or JAVA_HOME as evnrionment varibles by the below example command
-     export PATH="$DERBY_HOME/bin:$PATH"    
+     ***export PATH="$DERBY_HOME/bin:$PATH"***
 
    run the following command in console to prepare your table in Derby 
-     ij (start ij tool to manage Derby), 
+     ***ij (start ij tool to manage Derby),***
+	 
    In ij prompt command line, please run 
-     CONNECT 'jdbc:derby:minibank;create=true';
-     run '~/bin/Minibank_DDL_Derby.sql';
+   
+     ***CONNECT 'jdbc:derby:minibank;create=true';***
+     ***run '~/bin/Minibank_DDL_Derby.sql';***
 
 	After creating the database, you can find a directory named 'minibank' under your current directory if above commands executes successfully.
-	Quit the **ij** command by 'exit;' and run *startNetworkServer* in 'bin'. This will set it to NetworkServer mode and start automatically listening on port 1527. 
+	Quit the **ij** command by ***exit;*** and run ***startNetworkServer*** in 'bin'. This will set it to NetworkServer mode and start automatically listening on port 1527. 
 
 3. In your Eclipse Servers view, create a Liberty server for backend. Edit the ***server.xml*** by referencing the one that we provide you in [*backend_server.xml*](Minibank-JEE7-Backend/wlp/server.xml). You need to change the label '<dataSource>','<databaseName>' to your own derby database path,and the same for label '<library>', change the '<fileset dir>' to your derby's installation path for libraries.
 	After that,put the [*backend war*](Minibank-JEE7-Backend/com.ibm.cicsdev.minibank.backend.war) in backend liberty server's ***dropins*** folder, then it will deploy and run automatically.
