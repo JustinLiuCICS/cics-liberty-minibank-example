@@ -116,17 +116,21 @@ This project is licensed under [Apache License Version 2.0](LICENSE).
      ***export DERBY_HOME=~/db-derby-10.13.1.1-bin***
 	 
    Set DERBY_HOME or JAVA_HOME as evnrionment varibles by the below example command
+
      ***export PATH="$DERBY_HOME/bin:$PATH"***
 
-   run the following command in console to prepare your table in Derby 
-     ***ij (start ij tool to manage Derby),***
+   run the following command in console to prepare your table in Derby
+ 
+     ***ij (start ij tool to manage Derby)***
 	 
    In ij prompt command line, please run 
    
      ***CONNECT 'jdbc:derby:minibank;create=true';***
+
      ***run '~/bin/Minibank_DDL_Derby.sql';***
 
 	After creating the database, you can find a directory named 'minibank' under your current directory if above commands executes successfully.
+
 	Quit the **ij** command by ***exit;*** and run ***startNetworkServer*** in 'bin'. This will set it to NetworkServer mode and start automatically listening on port 1527. 
 
 3. In your Eclipse Servers view, create a Liberty server for backend. Edit the ***server.xml*** by referencing the one that we provide you in [*backend_server.xml*](Minibank-JEE7-Backend/wlp/server.xml). You need to change the label '<dataSource>','<databaseName>' to your own derby database path,and the same for label '<library>', change the '<fileset dir>' to your derby's installation path for libraries.
